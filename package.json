@@ -1,0 +1,36 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.cargoamazon.app",
+    "productName": "Cargo Amazon",
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^16.0.1",
+    "electron-builder": "^26.15.3"
+  },
+  "dependencies": {
+    "basic-ftp": "^4.6.6",
+    "findit": "^2.0.0",
+    "ssh2-sftp-client": "^12.1.1"
+  }
+}

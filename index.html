@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: blob:; connect-src * data: blob:; style-src 'self' http://* 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Cargo Amazon - Dashboard</title>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#4facfe" stroke-width="2"/>
+                    <path d="M8 12L11 15L16 9" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>Cargo Amazon</h1>
+            </div>
+            <div class="status-indicator">
+                <span id="connectionDot" class="dot yellow"></span>
+                <span id="connectionText">Conectando...</span>
+            </div>
+        </header>
+
+        <main class="card">
+            <div class="hero-section" id="heroSection">
+                <h2>Sincronización FTP</h2>
+                <p>Este proceso automatizará la búsqueda y subida de archivos PDF locales al servidor de Amazon.</p>
+                <button id="startButton" class="btn-primary">
+                    <span class="btn-text">Iniciar Sincronización</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+
+            <div class="processing-section hidden" id="processingSection">
+                <div class="spinner-container">
+                    <div class="spinner"></div>
+                    <h3 id="currentAction">Preparando...</h3>
+                </div>
+                
+                <div class="log-container">
+                    <div class="log-header">
+                        <h4>Registro de Actividad</h4>
+                        <span class="badge" id="successCount">0 Subidos</span>
+                    </div>
+                    <ul id="logList" class="log-list">
+                        <!-- logs here -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="result-section hidden" id="resultSection">
+                <div class="icon-success hidden" id="iconSuccess">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <h2>Proceso Completado</h2>
+                    <p>Todos los archivos se han procesado correctamente.</p>
+                </div>
+                <div class="icon-error hidden" id="iconError">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ff4b4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                    <h2 id="errorTitle">Ocurrió un Error</h2>
+                    <p id="errorSubtitle">Por favor revisa tu conexión a internet y vuelve a intentarlo.</p>
+                </div>
+                <button class="btn-secondary" onclick="location.reload()">Volver al Inicio</button>
+            </div>
+        </main>
+    </div>
+    <script src="./renderer.js"></script>
+</body>
+</html>
