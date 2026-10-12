@@ -29,7 +29,7 @@
     "electron-builder": "^26.15.3"
   },
   "dependencies": {
-    "basic-ftp": "^4.6.6",
+    "basic-ftp": "^6.2.3",
     "findit": "^2.0.0",
     "ssh2-sftp-client": "^12.1.1"
   }
