@@ -26,7 +26,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^16.0.1",
-    "electron-builder": "^26.15.3"
+    "electron-builder": "^26.18.0"
   },
   "dependencies": {
     "basic-ftp": "^4.6.6",
